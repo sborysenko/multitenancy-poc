@@ -20,3 +20,8 @@ spring:
     outOfOrder: true
     table: schema_version
     fail-on-missing-locations: true
+
+logging:
+  level:
+    root: INFO
+    com.example.multitenancypoc: DEBUG

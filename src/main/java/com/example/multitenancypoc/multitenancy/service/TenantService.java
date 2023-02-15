@@ -26,4 +26,8 @@ public class TenantService extends AbstractTenantService {
         return getSession().createQuery("from Tenant").getResultList();
     }
 
+    public void saveTenant(Tenant tenant) {
+        getSession().persist(tenant);
+    }
+
 }

@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: ${CUSTOMCONNSTR_mysqlfs}
+    url: ${MYSQL_URL}
     username: ${MYSQL_ADMIN}
     password: ${MYSQL_PASSWORD}
   jpa:

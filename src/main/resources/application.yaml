@@ -15,11 +15,12 @@ spring:
       ddl-auto: none
     open-in-view: false
   flyway:
-    enabled: false
+    enabled: true
     locations: classpath:migration
     outOfOrder: true
     table: schema_version
     fail-on-missing-locations: true
+    schema: metadata
 
 logging:
   level:

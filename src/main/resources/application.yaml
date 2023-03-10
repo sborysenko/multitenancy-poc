@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: secrets.MYSQL_CONNECTION
-    username: secrets.MYSQL_ADMIN
-    password: secrets.MYSQL_PASSWORD
+    url: ${CUSTOMCONNSTR_mysqlfs}
+    username: ${MYSQL_ADMIN}
+    password: ${MYSQL_PASSWORD}
   jpa:
     properties:
       hibernate:

@@ -1,9 +1,9 @@
 package com.example.multitenancypoc.controller;
 
-import com.example.multitenancypoc.multitenancy.model.User;
+import com.example.multitenancypoc.model.User;
+import com.example.multitenancypoc.multitenancy.model.AuthUser;
 import com.example.multitenancypoc.multitenancy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +22,13 @@ public class UserController {
     }
 
     @GetMapping("/{login}")
-    public User getUserByLogin(@PathVariable String login) {
+    public AuthUser getUserByLogin(@PathVariable String login) {
         return userService.getUserByLogin(login);
+    }
+
+    @GetMapping("/accounts")
+    public List<User> getUserAccounts() {
+        return userService.getUserAccounts();
+
     }
 }

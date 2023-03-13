@@ -13,7 +13,7 @@ import java.sql.SQLException;
 @Component
 @Slf4j
 public class SchemaBasedMultiTenantConnectionProvider implements MultiTenantConnectionProvider {
-    public static final String DEFAULT_SCHEMA = "metadata";
+    public static final String DEFAULT_SCHEMA = "maindb";
 
     private final DataSource datasource;
 

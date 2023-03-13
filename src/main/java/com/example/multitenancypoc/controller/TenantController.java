@@ -1,6 +1,6 @@
 package com.example.multitenancypoc.controller;
 
-import com.example.multitenancypoc.multitenancy.model.Tenant;
+import com.example.multitenancypoc.multitenancy.model.UserTenant;
 import com.example.multitenancypoc.multitenancy.service.MultitenancyService;
 import com.example.multitenancypoc.multitenancy.service.TenantService;
 import lombok.AllArgsConstructor;
@@ -22,17 +22,17 @@ public class TenantController {
     private MultitenancyService multitenancyService;
 
     @GetMapping("/all")
-    public List<Tenant> getAllTenants() {
+    public List<UserTenant> getAllTenants() {
 
         return tenantService.getTenants();
 
     }
 
     @PostMapping("/add")
-    public void addTenant(@RequestBody Tenant tenant) {
-        log.debug("Adding new tenant. {}", tenant);
+    public void addTenant(@RequestBody UserTenant userTenant) {
+        log.debug("Adding new tenant. {}", userTenant);
 
-        tenantService.saveTenant(tenant);
-        multitenancyService.initDatabase(tenant.getSchemaName());
+        tenantService.saveTenant(userTenant);
+        multitenancyService.initDatabase(userTenant.getSchemaName());
     }
 }
